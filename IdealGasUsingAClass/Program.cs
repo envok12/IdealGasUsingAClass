@@ -37,15 +37,21 @@ namespace IdealGasUsingAClass
 
                     IdealGas gas = new IdealGas();
 
+                    Console.WriteLine("Please enter the mass of the gas in grams: ");
+                    mass = Convert.ToDouble(Console.ReadLine());
 
-                    //usr Input gas ect.
+                    Console.WriteLine("Please enter the temperature of the gas in Celcius: ");
+                    temp = Convert.ToDouble(Console.ReadLine());
+
+                    Console.WriteLine("Please enter the volume of your container in cubic meters: ");
+                    volume = Convert.ToDouble(Console.ReadLine());
 
                     gas.SetVolume(volume);
                     gas.SetMass(mass);
                     gas.SetTemp(temp);
 
                     gas.SetMolecularWeight(molecularWeight);
-                    
+
                     pascals = gas.GetPressure();
 
                     DisplayPressure(pascals);
@@ -103,10 +109,7 @@ namespace IdealGasUsingAClass
          public static double GetMolecularWeightFromName(string gasName, string[] gasNames, double[] molecularWeights, int countGases)
         {
 
-            double moleWeight = 0.0;
-            double mass = 0.0;
-            double volume = 0.0;
-            double temp = 0.0;
+            double molecularWeight = 0.0;
 
                 Console.WriteLine("Enter the gas name you would like to use.");
                 gasName = Console.ReadLine();
@@ -116,20 +119,13 @@ namespace IdealGasUsingAClass
                 {
 
                     Console.WriteLine("The gas name " + $"{ gasName }, is at index {countGases}. ");
-                    moleWeight = molecularWeights[countGases];
-                    Console.WriteLine("The molecular weight of your gas is " + $"{moleWeight}.");
+                    molecularWeight = molecularWeights[countGases];
+                    //Console.WriteLine("The molecular weight of your gas is " + $"{molecularWeight}.");
 
 
-                    Console.WriteLine("Please enter the mass of the gas in grams: ");
-                    mass = Convert.ToDouble(Console.ReadLine());
+                    
 
-                    Console.WriteLine("Please enter the temperature of the gas in Celcius: ");
-                    temp = Convert.ToDouble(Console.ReadLine());
-
-                    Console.WriteLine("Please enter the volume of your container in cubic meters: ");
-                    volume = Convert.ToDouble(Console.ReadLine());
-
-                    return moleWeight;
+                    return molecularWeight;
                  
                 }
                 else
